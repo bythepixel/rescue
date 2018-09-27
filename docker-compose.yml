@@ -6,6 +6,9 @@ services:
     build: .
     image: rescue-api-image
     container_name: rescue-api-container
+    depends_on:
+      - database
+    command: ["./wait-for-it.sh", "database:3306"]
     env_file:
       - .env
     ports:
@@ -20,6 +23,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: rescue
     ports:
       - "3307:3306"
     networks:

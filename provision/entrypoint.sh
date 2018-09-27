@@ -32,4 +32,7 @@ cat /opt/provision/apache/sites-enabled/rescue-443.conf | \
     sed "s|_sslCertificateKeyFile|/etc/pki/local/ca.key|g" \
 > /etc/apache2/sites-enabled/rescue-443.conf
 
+php artisan migrate
+php artisan db:seed
+
 apache2-foreground

@@ -16,6 +16,7 @@ RUN apt-get update -y \
   libvpx-dev \
   vim \
   redis-tools \
+  iputils-ping \
   && rm -rf /var/lib/apt/lists/*
 
 # Phpize extensions
