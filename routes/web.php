@@ -12,5 +12,15 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    $response = [
+        'name' => 'Rescue API',
+        'purpose' => 'The goal of the API is to deliver that database layer to the vue js application',
+        'data' => [
+            'tags' => [
+                'pets', 'dogs', 'birds', 'cats', 'horses'
+            ]
+        ]
+    ];
+
+    return json_encode($response);
 });
