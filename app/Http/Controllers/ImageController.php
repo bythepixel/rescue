@@ -22,10 +22,12 @@ class ImageController extends Controller
         $image = new Image();
 
         $imageFile = $request->file('image');
-        $imageService = new ImageService();
-        $imageService->upload('/', $imageFile);
 
-        $image->path = $imageFile->path();
+        $imageService = new ImageService();
+        $imagePath = '/' . $imageFile->getClientOriginalName();
+        $imageService->upload($imagePath, file_get_contents($imageFile->getPathName()));
+
+        $image->path = $imagePath;
         $image->pet_id = $request->input('pet_id');
 
         $image->save();
@@ -46,10 +48,12 @@ class ImageController extends Controller
         $image = Image::find($id);
 
         $imageFile = $request->file('image');
-        $imageService = new ImageService();
-        $imageService->update('/', $imageFile);
 
-        $image->path = $request->input('name');
+        $imageService = new ImageService();
+        $imagePath = '/' . $imageFile->getClientOriginalName();
+        $imageService->update($imagePath, file_get_contents($imageFile->getPathName()));
+
+        $image->path = $imagePath;
         $image->pet_id = $request->input('pet_id');
 
         $image->save();

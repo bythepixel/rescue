@@ -41,7 +41,7 @@ $router->group(['prefix' => 'organizations'], function () use ($router) {
         'as' => 'organization.new', 'uses' => 'OrganizationController@store'
     ]);
     $router->delete('{id}', [
-        'as' => 'organization.destroy', 'uses' => 'OrganizationController@show'
+        'as' => 'organization.destroy', 'uses' => 'OrganizationController@destroy'
     ]);
 });
 
@@ -53,7 +53,7 @@ $router->group(['prefix' => 'images'], function () use ($router) {
         'as' => 'image.new', 'uses' => 'ImageController@store'
     ]);
     $router->delete('{id}', [
-        'as' => 'image.destroy', 'uses' => 'ImageController@show'
+        'as' => 'image.destroy', 'uses' => 'ImageController@destroy'
     ]);
 });
 
