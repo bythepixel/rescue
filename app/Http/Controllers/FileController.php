@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\File;
 use Illuminate\Http\Request;
+use Laravel\Lumen\Routing\Controller;
 
 class FileController extends Controller
 {
@@ -21,24 +22,7 @@ class FileController extends Controller
         $file->path = $request->input('name');
         $file->pet_id = $request->input('pet_id');
 
-        $file->save();
-
-        return $file;
-    }
-
-    /**
-     * Save changes to File
-     *
-     * @param Request $request
-     * @param int $id
-     * @return File
-     */
-    public function update(int $id, Request $request)
-    {
-        $file = File::find($id);
-
-        $file->path = $request->input('name');
-        $file->pet_id = $request->input('pet_id');
+        $request->file('file')->store($file->path);
 
         $file->save();
 

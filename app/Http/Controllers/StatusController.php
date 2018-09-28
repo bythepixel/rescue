@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Status;
 use Illuminate\Http\Request;
+use Laravel\Lumen\Routing\Controller;
 
 class StatusController extends Controller
 {

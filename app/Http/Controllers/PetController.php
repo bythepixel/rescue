@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Pet;
 use Illuminate\Http\Request;
+use Laravel\Lumen\Routing\Controller;
 
 class PetController extends Controller
 {

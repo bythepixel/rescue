@@ -57,6 +57,12 @@ $router->group(['prefix' => 'images'], function () use ($router) {
     ]);
 });
 
+$router->group(['prefix' => 'files'], function () use ($router) {
+    $router->post('/', [
+        'as' => 'files.new', 'uses' => 'FileController@store'
+    ]);
+});
+
 $router->get('/', function () use ($router) {
     $response = [
         'name' => 'Rescue API',

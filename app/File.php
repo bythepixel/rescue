@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property mixed $organization
+ * @property array|null|string path
+ * @property array|null|string pet_id
  */
 class File extends Model
 {

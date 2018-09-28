@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Image;
 use App\Services\ImageService;
 use Illuminate\Http\Request;
+use Laravel\Lumen\Routing\Controller;
 
 class ImageController extends Controller
 {
