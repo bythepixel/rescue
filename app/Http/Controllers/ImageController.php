@@ -57,7 +57,7 @@ class ImageController extends Controller
 
         $image->delete();
 
-        return $id;
+        return "success";
     }
 
 }

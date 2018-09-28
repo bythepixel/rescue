@@ -57,7 +57,7 @@ class FileController extends Controller
 
         $file->delete();
 
-        return $id;
+        return "success";
     }
 
 }

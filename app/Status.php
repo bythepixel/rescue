@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property mixed $status
+ * @property mixed $organization
+ * @property array|null|string organization_id
+ * @property array|null|string name
  */
 class Status extends Model
 {

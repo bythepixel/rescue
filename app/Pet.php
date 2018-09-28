@@ -6,6 +6,23 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property mixed $pet
+ * @property mixed $user
+ * @property mixed $status
+ * @property mixed $species
+ * @property mixed $organization
+ * @property mixed $images
+ * @property mixed $files
+ * @property array|null|string name
+ * @property array|null|string breed
+ * @property array|null|string description
+ * @property array|null|string birth
+ * @property array|null|string age
+ * @property array|null|string weight
+ * @property array|null|string fee
+ * @property array|null|string organization_id
+ * @property array|null|string species_id
+ * @property array|null|string status_id
+ * @property array|null|string user_id
  */
 class Pet extends Model
 {

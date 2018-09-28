@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Organization;
 use Illuminate\Http\Request;
+use Laravel\Lumen\Routing\Controller;
 
 class OrganizationController extends Controller
 {
-
     /**
      * Save Domain to Organization
      *
@@ -22,7 +22,7 @@ class OrganizationController extends Controller
 
         $organization->save();
 
-        return response($organization);
+        return $organization;
     }
 
     /**
@@ -40,14 +40,14 @@ class OrganizationController extends Controller
 
         $organization->save();
 
-        return response($organization);
+        return $organization;
     }
 
     /**
      * Remove Organization
      *
      * @param int $id
-     * @return int
+     * @return string
      */
     public function destroy(int $id)
     {
@@ -55,7 +55,7 @@ class OrganizationController extends Controller
 
         $organization->delete();
 
-        return $id;
+        return "success";
     }
 
 }

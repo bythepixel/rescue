@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property mixed $species
+ * @property mixed $pets
  */
 class Species extends Model
 {

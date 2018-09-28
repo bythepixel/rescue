@@ -12,9 +12,35 @@
 */
 
 /** @var \Laravel\Lumen\Routing\Router $router */
-$router->get('pets', [
-    'as' => 'pets', 'uses' => 'PetsController@index'
-]);
+$router->group(['prefix' => 'pets'], function () use ($router) {
+    $router->get('/', [
+        'as' => 'pets', 'uses' => 'PetController@index'
+    ]);
+    $router->get('{id}', [
+        'as' => 'pet', 'uses' => 'PetController@show'
+    ]);
+    $router->put('{id}', [
+        'as' => 'pet.update', 'uses' => 'PetController@update'
+    ]);
+    $router->post('/', [
+        'as' => 'pet.new', 'uses' => 'PetController@store'
+    ]);
+    $router->delete('{id}', [
+        'as' => 'pet.destroy', 'uses' => 'PetController@show'
+    ]);
+});
+
+$router->group(['prefix' => 'organizations'], function () use ($router) {
+    $router->put('{id}', [
+        'as' => 'organization.update', 'uses' => 'OrganizationController@update'
+    ]);
+    $router->post('/', [
+        'as' => 'organization.new', 'uses' => 'OrganizationController@store'
+    ]);
+    $router->delete('{id}', [
+        'as' => 'organization.destroy', 'uses' => 'OrganizationController@show'
+    ]);
+});
 
 $router->get('/', function () use ($router) {
     $response = [
