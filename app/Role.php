@@ -8,17 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 
-class User extends Model implements AuthenticatableContract, AuthorizableContract
+class Role extends Model
 {
-    use Authenticatable, Authorizable;
-
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email',
+        'name',
     ];
 
     /**
@@ -31,18 +29,10 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     ];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function organization()
+    public function users()
     {
-        return $this->hasOne(Organization::class);
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function role()
-    {
-        return $this->hasOne(Role::class);
+        return $this->hasMany(User::class);
     }
 }

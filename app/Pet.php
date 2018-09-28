@@ -2,17 +2,13 @@
 
 namespace App;
 
-use Illuminate\Auth\Authenticatable;
-use Laravel\Lumen\Auth\Authorizable;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property mixed $user
+ * @property mixed $pet
  */
 class Pet extends Model
 {
-    use Authenticatable, Authorizable;
-
     /**
      * The attributes that are mass assignable.
      *
@@ -32,8 +28,51 @@ class Pet extends Model
         'user_id',
     ];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function species()
+    {
+        return $this->belongsTo(Species::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function organization()
+    {
+        return $this->belongsTo(Organization::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function files()
+    {
+        return $this->hasMany(File::class);
     }
 }
