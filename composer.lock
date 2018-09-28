@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1325169dfefa886c3cbcfe6216a45d81",
+    "content-hash": "b638dc92206172bab281835d31479670",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1282,6 +1282,42 @@
             "description": "The Illuminate View package.",
             "homepage": "https://laravel.com",
             "time": "2018-09-18T12:50:05+00:00"
+        },
+        {
+            "name": "imgix/imgix-php",
+            "version": "2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/imgix/imgix-php.git",
+                "reference": "2acbceb98931253b4c672e7f2001cbebd2854b91"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/imgix/imgix-php/zipball/2acbceb98931253b4c672e7f2001cbebd2854b91",
+                "reference": "2acbceb98931253b4c672e7f2001cbebd2854b91",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Imgix\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "description": "A PHP client library for generating URLs with imgix.",
+            "keywords": [
+                "imgix"
+            ],
+            "time": "2018-08-16T23:08:36+00:00"
         },
         {
             "name": "laravel/lumen-framework",
