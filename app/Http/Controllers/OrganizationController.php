@@ -47,7 +47,7 @@ class OrganizationController extends Controller
      * Remove Organization
      *
      * @param int $id
-     * @return \Illuminate\Http\RedirectResponse
+     * @return int
      */
     public function destroy(int $id)
     {
@@ -55,7 +55,7 @@ class OrganizationController extends Controller
 
         $organization->delete();
 
-        return response("success");
+        return $id;
     }
 
 }
