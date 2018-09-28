@@ -19,6 +19,9 @@ $router->group(['prefix' => 'pets'], function () use ($router) {
     $router->get('{id}', [
         'as' => 'pet', 'uses' => 'PetController@show'
     ]);
+    $router->get('view/{id}', [
+        'as' => 'pet.public', 'uses' => 'PetController@publicShow'
+    ]);
     $router->put('{id}', [
         'as' => 'pet.update', 'uses' => 'PetController@update'
     ]);

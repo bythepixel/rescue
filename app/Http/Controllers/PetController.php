@@ -25,6 +25,15 @@ class PetController extends Controller
     }
 
     /**
+     * @param int $id
+     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|null|static|static[]
+     */
+    public function publicShow(int $id)
+    {
+        return Pet::with(['organization', 'species', 'status'])->find($id);
+    }
+
+    /**
      * @param Request $request
      * @return Pet
      */
