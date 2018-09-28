@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class SpeciesTableSeeder extends Seeder
 {
@@ -11,6 +12,24 @@ class SpeciesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('species')->insert([
+            'name' => 'Dog',
+        ]);
+
+        DB::table('species')->insert([
+            'name' => 'Cat',
+        ]);
+
+        DB::table('species')->insert([
+            'name' => 'Bird',
+        ]);
+
+        DB::table('species')->insert([
+            'name' => 'Horse',
+        ]);
+
+        DB::table('species')->insert([
+            'name' => 'Snake',
+        ]);
     }
 }

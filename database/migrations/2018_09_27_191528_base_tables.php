@@ -24,14 +24,21 @@ class BaseTables extends Migration
             $table->string('name');
             $table->timestamps();
         });
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->timestamps();
+        });
+        Schema::create('users', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('first_name');
+            $table->string('last_name');
             $table->string('email');
             $table->string('password');
-            $table->string('role');
             $table->integer('organizations_id')->unsigned()->nullable();
             $table->foreign('organizations_id')->references('id')->on('organizations');
+            $table->integer('roles_id')->unsigned()->nullable();
+            $table->foreign('roles_id')->references('id')->on('roles');
             $table->timestamps();
         });
         Schema::create('species_has_organizations', function (Blueprint $table) {
@@ -93,6 +100,14 @@ class BaseTables extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('images');
+        Schema::dropIfExists('files');
+        Schema::dropIfExists('pets');
         Schema::dropIfExists('users');
+        Schema::dropIfExists('statuses');
+        Schema::dropIfExists('species_has_organizations');
+        Schema::dropIfExists('roles');
+        Schema::dropIfExists('organizations');
+        Schema::dropIfExists('species');
     }
 }
