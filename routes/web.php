@@ -45,6 +45,18 @@ $router->group(['prefix' => 'organizations'], function () use ($router) {
     ]);
 });
 
+$router->group(['prefix' => 'images'], function () use ($router) {
+    $router->put('{id}', [
+        'as' => 'image.update', 'uses' => 'ImageController@update'
+    ]);
+    $router->post('/', [
+        'as' => 'image.new', 'uses' => 'ImageController@store'
+    ]);
+    $router->delete('{id}', [
+        'as' => 'image.destroy', 'uses' => 'ImageController@show'
+    ]);
+});
+
 $router->get('/', function () use ($router) {
     $response = [
         'name' => 'Rescue API',
