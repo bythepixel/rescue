@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'heath@bythepixel.com',
             'password' => Hash::make('asdf'),
             'roles_id' => 1,
-            'organizations_id' => 1,
+            'organization_id' => 1,
         ]);
     }
 }

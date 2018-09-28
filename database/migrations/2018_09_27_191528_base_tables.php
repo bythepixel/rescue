@@ -13,7 +13,6 @@ class BaseTables extends Migration
      */
     public function up()
     {
-
         Schema::create('species', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
@@ -35,8 +34,8 @@ class BaseTables extends Migration
             $table->string('last_name');
             $table->string('email');
             $table->string('password');
-            $table->integer('organizations_id')->unsigned()->nullable();
-            $table->foreign('organizations_id')->references('id')->on('organizations');
+            $table->integer('organization_id')->unsigned()->nullable();
+            $table->foreign('organization_id')->references('id')->on('organizations');
             $table->integer('roles_id')->unsigned()->nullable();
             $table->foreign('roles_id')->references('id')->on('roles');
             $table->timestamps();
@@ -45,15 +44,15 @@ class BaseTables extends Migration
             $table->increments('id');
             $table->integer('species_id')->unsigned()->nullable();
             $table->foreign('species_id')->references('id')->on('species');
-            $table->integer('organizations_id')->unsigned()->nullable();
-            $table->foreign('organizations_id')->references('id')->on('organizations');
+            $table->integer('organization_id')->unsigned()->nullable();
+            $table->foreign('organization_id')->references('id')->on('organizations');
             $table->timestamps();
         });
         Schema::create('statuses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('organizations_id')->unsigned()->nullable();
-            $table->foreign('organizations_id')->references('id')->on('organizations');
+            $table->integer('organization_id')->unsigned()->nullable();
+            $table->foreign('organization_id')->references('id')->on('organizations');
             $table->timestamps();
         });
         Schema::create('pets', function (Blueprint $table) {
@@ -65,30 +64,28 @@ class BaseTables extends Migration
             $table->date('birth')->nullable();
             $table->integer('weight')->nullable();
             $table->integer('fee')->nullable();
-            $table->integer('organizations_id')->unsigned()->nullable();
-            $table->foreign('organizations_id')->references('id')->on('organizations');
+            $table->integer('organization_id')->unsigned()->nullable();
+            $table->foreign('organization_id')->references('id')->on('organizations');
             $table->integer('species_id')->unsigned()->nullable();
             $table->foreign('species_id')->references('id')->on('species');
-            $table->integer('statuses_id')->unsigned()->nullable();
-            $table->foreign('statuses_id')->references('id')->on('statuses');
-            $table->integer('created_by')->unsigned()->nullable();
-            $table->foreign('created_by')->references('id')->on('users');
-            $table->integer('last_edited_by')->unsigned()->nullable();
-            $table->foreign('last_edited_by')->references('id')->on('users');
+            $table->integer('status_id')->unsigned()->nullable();
+            $table->foreign('status_id')->references('id')->on('statuses');
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
         Schema::create('files', function (Blueprint $table) {
             $table->increments('id');
             $table->string('path');
-            $table->integer('pets_id')->unsigned()->nullable();
-            $table->foreign('pets_id')->references('id')->on('pets');
+            $table->integer('pet_id')->unsigned()->nullable();
+            $table->foreign('pet_id')->references('id')->on('pets');
             $table->timestamps();
         });
         Schema::create('images', function (Blueprint $table) {
             $table->increments('id');
             $table->string('path');
-            $table->integer('pets_id')->unsigned()->nullable();
-            $table->foreign('pets_id')->references('id')->on('pets');
+            $table->integer('pet_id')->unsigned()->nullable();
+            $table->foreign('pet_id')->references('id')->on('pets');
             $table->timestamps();
         });
     }

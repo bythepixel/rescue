@@ -14,32 +14,32 @@ class StatusesTableSeeder extends Seeder
     {
         DB::table('statuses')->insert([
             'name' => 'Intake',
-            'organizations_id' => 1,
+            'organization_id' => 1,
         ]);
 
         DB::table('statuses')->insert([
             'name' => 'Under Evaluation',
-            'organizations_id' => 1,
+            'organization_id' => 1,
         ]);
 
         DB::table('statuses')->insert([
             'name' => 'Needs Foster',
-            'organizations_id' => 1,
+            'organization_id' => 1,
         ]);
 
         DB::table('statuses')->insert([
             'name' => 'Has Foster',
-            'organizations_id' => 1,
+            'organization_id' => 1,
         ]);
 
         DB::table('statuses')->insert([
             'name' => 'Available',
-            'organizations_id' => 1,
+            'organization_id' => 1,
         ]);
 
         DB::table('statuses')->insert([
             'name' => 'Adopted',
-            'organizations_id' => 1,
+            'organization_id' => 1,
         ]);
     }
 }

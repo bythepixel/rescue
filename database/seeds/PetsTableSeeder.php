@@ -230,11 +230,10 @@ class PetsTableSeeder extends Seeder
                 'birth' => $faker->date(),
                 'weight' => rand(40,120),
                 'fee' => $faker->numberBetween(100, 1000),
-                'organizations_id' => 1,
+                'organization_id' => 1,
                 'species_id' => 1,
-                'statuses_id' => 1,
-                'created_by' => 1,
-                'last_edited_by' => 1,
+                'status_id' => 1,
+                'user_id' => 1,
             ]);
         }
     }

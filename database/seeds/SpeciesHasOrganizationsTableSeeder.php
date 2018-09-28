@@ -14,27 +14,27 @@ class SpeciesHasOrganizationsTableSeeder extends Seeder
     {
         DB::table('species_has_organizations')->insert([
             'species_id' => 1,
-            'organizations_id' => 1,
+            'organization_id' => 1,
         ]);
 
         DB::table('species_has_organizations')->insert([
             'species_id' => 1,
-            'organizations_id' => 2,
+            'organization_id' => 2,
         ]);
 
         DB::table('species_has_organizations')->insert([
             'species_id' => 1,
-            'organizations_id' => 3,
+            'organization_id' => 3,
         ]);
 
         DB::table('species_has_organizations')->insert([
             'species_id' => 1,
-            'organizations_id' => 4,
+            'organization_id' => 4,
         ]);
 
         DB::table('species_has_organizations')->insert([
             'species_id' => 1,
-            'organizations_id' => 5,
+            'organization_id' => 5,
         ]);
     }
 }

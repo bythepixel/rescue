@@ -11,6 +11,11 @@
 |
 */
 
+/** @var \Laravel\Lumen\Routing\Router $router */
+$router->get('pets', [
+    'as' => 'pets', 'uses' => 'PetsController@index'
+]);
+
 $router->get('/', function () use ($router) {
     $response = [
         'name' => 'Rescue API',
