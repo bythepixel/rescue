@@ -10,6 +10,14 @@ use Laravel\Lumen\Routing\Controller;
 class ImageController extends Controller
 {
 
+    public function get(int $id, int $width, int $height)
+    {
+        $imageService = new ImageService();
+        $image = Image::find($id);
+
+        return $imageService->buildUrl($image->path, $width, $height);
+    }
+
     /**
      * Save Image
      *

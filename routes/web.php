@@ -55,6 +55,9 @@ $router->group(['prefix' => 'images'], function () use ($router) {
     $router->delete('{id}', [
         'as' => 'image.destroy', 'uses' => 'ImageController@destroy'
     ]);
+    $router->get('{id}/{width}/{height}', [
+        'as' => 'image.get', 'uses' => 'ImageController@get'
+    ]);
 });
 
 $router->group(['prefix' => 'files'], function () use ($router) {
