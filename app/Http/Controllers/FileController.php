@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\File;
+use App\Services\FileService;
 use Illuminate\Http\Request;
 use Laravel\Lumen\Routing\Controller;
 
@@ -13,17 +14,17 @@ class FileController extends Controller
      * Save File
      *
      * @param Request $request
+     * @param FileService $fileService
      * @return File
      */
-    public function store(Request $request)
+    public function store(Request $request, FileService $fileService)
     {
         $file = new File();
 
         $file->path = $request->input('name');
         $file->pet_id = $request->input('pet_id');
 
-        $request->file('file')->store($file->path);
-
+        $fileService->store($request->file('file'));
         $file->save();
 
         return $file;
