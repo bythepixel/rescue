@@ -21,5 +21,21 @@ class UsersTableSeeder extends Seeder
             'roles_id' => 1,
             'organization_id' => 1,
         ]);
+        DB::table('users')->insert([
+            'first_name' => 'Turner',
+            'last_name' => 'Walters',
+            'email' => 'turner@bythepixel.com',
+            'password' => Hash::make('asdf'),
+            'roles_id' => 1,
+            'organization_id' => 1,
+        ]);
+        DB::table('users')->insert([
+            'first_name' => 'Elliot',
+            'last_name' => 'Regan',
+            'email' => 'elliot@bythepixel.com',
+            'password' => Hash::make('asdf'),
+            'roles_id' => 1,
+            'organization_id' => 1,
+        ]);
     }
 }
